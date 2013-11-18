@@ -18,6 +18,11 @@
 			#map-canvas {
 				height: 100%
 			}
+		
+		
+			#navbar li:nth-child(3){
+				height: 67px;
+			}
 		</style>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
@@ -102,11 +107,11 @@
 												Severity
 											</legend>
 											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6a" value="on" checked="checked">
-											<label for="radio-choice-t-6a">1</label>
+											<label for="radio-choice-t-6a">!</label>
 											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6b" value="off">
-											<label for="radio-choice-t-6b">2</label>
+											<label for="radio-choice-t-6b">!!</label>
 											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6c" value="other">
-											<label for="radio-choice-t-6c">3</label>
+											<label for="radio-choice-t-6c">!!!</label>
 										</fieldset>
 									</form>
 									<a href="#" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-iconpos="notext" data-inline="true">Cancel</a>
@@ -187,27 +192,57 @@
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="#landing" data-icon="home" data-transition="slide">Map</a>
+							<a href="#landing" data-icon="home" data-transition="none">Map</a>
 						</li>
 						<li>
-							<a href="#reports" data-icon="info" data-transition="slide">Reports</a>
+							<a href="#reports" data-icon="info" data-transition="none">Reports</a>
 						</li>
 						<li>
 							<a href="#popupDialog" data-icon="plus" data-rel="popup" data-position-to="window" data-role="button" data-close-btn="none">New</a>
 							<div data-role="popup" id="popupDialog" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+								<div data-role="header" data-theme="a" class="ui-corner-top">
+									<h1>New...</h1>
+								</div>
 								<div data-role="content" class="ui-corner-bottom ui-content">
-									<h3 class="ui-title">New: Route Report</h3>
-									<h3 class="ui-title">At: 9:00 AM PM</h3>
+									<form>
+										<fieldset data-role="controlgroup" data-type="horizontal">
+											<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+											<label for="radio-choice-h-2a">Route</label>
+											<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+											<label for="radio-choice-h-2b">Report</label>
+										</fieldset>
+									</form>
+									<form>
+										<label for="datetime-3">Date and Time</label>
+										<input type="datetime-local" data-clear-btn="false" name="datetime-3" id="datetime-3" value="">
+									</form>
+									<form>
+										<label for="text-1">Name</label>
+										<input type="text" data-clear-btn="true" name="text-1" id="text-1" value="" placeholder="(optional)">
+									</form>
+									<form>
+										<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="severity">
+											<legend>
+												Severity
+											</legend>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6a" value="on" checked="checked">
+											<label for="radio-choice-t-6a">!</label>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6b" value="off">
+											<label for="radio-choice-t-6b">!!</label>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6c" value="other">
+											<label for="radio-choice-t-6c">!!!</label>
+										</fieldset>
+									</form>
 									<a href="#" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-iconpos="notext" data-inline="true">Cancel</a>
-									<a href="#" data-role="button" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Okay</a>
+									<a href="#" data-role="button" id="btn-create" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Create</a>
 								</div>
 							</div>
 						</li>
 						<li>
-							<a href="#routes" data-icon="star" data-transition="slide">Routes</a>
+							<a href="#routes" data-icon="star" data-transition="none">Routes</a>
 						</li>
 						<li>
-							<a href="#settings" data-icon="gear" data-transition="slide">Settings</a>
+							<a href="#settings" data-icon="gear" data-transition="none">Settings</a>
 						</li>
 					</ul>
 				</div>
@@ -276,27 +311,57 @@
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="#landing" data-icon="home" data-transition="slide" data-direction="reverse">Map</a>
+							<a href="#landing" data-icon="home" data-transition="none">Map</a>
 						</li>
 						<li>
-							<a href="#reports" data-icon="info" data-transition="slide" data-direction="reverse">My Reports</a>
-						</li>
-						<li>
-							<a href="#routes" data-icon="star" data-transition="slide">My Routes</a>
-						</li>
-						<li>
-							<a href="#settings" data-icon="gear" data-transition="slide">Settings</a>
+							<a href="#reports" data-icon="info" data-transition="none">Reports</a>
 						</li>
 						<li>
 							<a href="#popupDialog" data-icon="plus" data-rel="popup" data-position-to="window" data-role="button" data-close-btn="none">New</a>
 							<div data-role="popup" id="popupDialog" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+								<div data-role="header" data-theme="a" class="ui-corner-top">
+									<h1>New...</h1>
+								</div>
 								<div data-role="content" class="ui-corner-bottom ui-content">
-									<h3 class="ui-title">New: Route Report</h3>
-									<h3 class="ui-title">At: 9:00 AM PM</h3>
+									<form>
+										<fieldset data-role="controlgroup" data-type="horizontal">
+											<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+											<label for="radio-choice-h-2a">Route</label>
+											<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+											<label for="radio-choice-h-2b">Report</label>
+										</fieldset>
+									</form>
+									<form>
+										<label for="datetime-3">Date and Time</label>
+										<input type="datetime-local" data-clear-btn="false" name="datetime-3" id="datetime-3" value="">
+									</form>
+									<form>
+										<label for="text-1">Name</label>
+										<input type="text" data-clear-btn="true" name="text-1" id="text-1" value="" placeholder="(optional)">
+									</form>
+									<form>
+										<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="severity">
+											<legend>
+												Severity
+											</legend>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6a" value="on" checked="checked">
+											<label for="radio-choice-t-6a">!</label>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6b" value="off">
+											<label for="radio-choice-t-6b">!!</label>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6c" value="other">
+											<label for="radio-choice-t-6c">!!!</label>
+										</fieldset>
+									</form>
 									<a href="#" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-iconpos="notext" data-inline="true">Cancel</a>
-									<a href="#" data-role="button" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Okay</a>
+									<a href="#" data-role="button" id="btn-create" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Create</a>
 								</div>
 							</div>
+						</li>
+						<li>
+							<a href="#routes" data-icon="star" data-transition="none">Routes</a>
+						</li>
+						<li>
+							<a href="#settings" data-icon="gear" data-transition="none">Settings</a>
 						</li>
 					</ul>
 				</div>
@@ -339,81 +404,63 @@
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="#landing" data-icon="home" data-transition="slide" data-direction="reverse">Map</a>
+							<a href="#landing" data-icon="home" data-transition="none">Map</a>
 						</li>
 						<li>
-							<a href="#reports" data-icon="info" data-transition="slide" data-direction="reverse">My Reports</a>
-						</li>
-						<li>
-							<a href="#routes" data-icon="star" data-transition="slide" data-direction="reverse">My Routes</a>
-						</li>
-						<li>
-							<a href="#settings" data-icon="gear" data-transition="slide">Settings</a>
+							<a href="#reports" data-icon="info" data-transition="none">Reports</a>
 						</li>
 						<li>
 							<a href="#popupDialog" data-icon="plus" data-rel="popup" data-position-to="window" data-role="button" data-close-btn="none">New</a>
 							<div data-role="popup" id="popupDialog" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+								<div data-role="header" data-theme="a" class="ui-corner-top">
+									<h1>New...</h1>
+								</div>
 								<div data-role="content" class="ui-corner-bottom ui-content">
-									<h3 class="ui-title">New: Route Report</h3>
-									<h3 class="ui-title">At: 9:00 AM PM</h3>
+									<form>
+										<fieldset data-role="controlgroup" data-type="horizontal">
+											<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+											<label for="radio-choice-h-2a">Route</label>
+											<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+											<label for="radio-choice-h-2b">Report</label>
+										</fieldset>
+									</form>
+									<form>
+										<label for="datetime-3">Date and Time</label>
+										<input type="datetime-local" data-clear-btn="false" name="datetime-3" id="datetime-3" value="">
+									</form>
+									<form>
+										<label for="text-1">Name</label>
+										<input type="text" data-clear-btn="true" name="text-1" id="text-1" value="" placeholder="(optional)">
+									</form>
+									<form>
+										<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="severity">
+											<legend>
+												Severity
+											</legend>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6a" value="on" checked="checked">
+											<label for="radio-choice-t-6a">!</label>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6b" value="off">
+											<label for="radio-choice-t-6b">!!</label>
+											<input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6c" value="other">
+											<label for="radio-choice-t-6c">!!!</label>
+										</fieldset>
+									</form>
 									<a href="#" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-iconpos="notext" data-inline="true">Cancel</a>
-									<a href="#" data-role="button" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Okay</a>
+									<a href="#" data-role="button" id="btn-create" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Create</a>
 								</div>
 							</div>
+						</li>
+						<li>
+							<a href="#routes" data-icon="star" data-transition="none">Routes</a>
+						</li>
+						<li>
+							<a href="#settings" data-icon="gear" data-transition="none">Settings</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 
-		<!-- NEW -->
-
-		<!-- header -->
-		<!--<div data-role="page" id="new">
-		<div data-role="header">
-		<h1>9:00 PM</h1>
-		</div>
-		<!-- content -->
-		<div data-role="content">
-			<p>
-				I'm first in the source order so I'm shown as the page.
-			</p>
-			<p>
-				View internal page called <a href="#bar">bar</a>
-			</p>
-		</div>
-		<!-- footer -->
-		<div data-role="footer" data-id="foo1" data-position="fixed">
-			<!-- navbar -->
-			<div data-role="navbar" id="navbar">
-				<ul>
-					<li>
-						<a href="#landing" data-icon="home" data-transition="slide" data-direction="reverse">Map</a>
-					</li>
-					<li>
-						<a href="#reports" data-icon="info" data-transition="slide" data-direction="reverse">My Reports</a>
-					</li>
-					<li>
-						<a href="#routes" data-icon="star" data-transition="slide" data-direction="reverse">My Routes</a>
-					</li>
-					<li>newReport
-						<a href="#settings" data-icon="gear" data-transition="slide" data-direction="reverse">Settings</a>
-					</li>
-					<li>
-						<a href="#" id="newReport" data-icon="plus" data-transition="slide" data-direction="reverse">New</a>
-						<!-- <a href="#popupDialog" data-icon="plus" data-rel="popup" data-position-to="window" data-role="button" data-close-btn="none">New</a>
-						<div data-role="popup" id="popupDialog" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
-							<div data-role="content" class="ui-corner-bottom ui-content">
-								<h3 class="ui-title">New: Route Report</h3>
-								<h3 class="ui-title">At: 9:00 AM PM</h3>
-								<a href="#" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-iconpos="notext" data-inline="true">Cancel</a>
-								<a href="#" data-role="button" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Okay</a>
-							</div>
-						</div> -->
-					</li>
-				</ul>
-			</div>
-		</div>
 		<script>
 			var selectLocation = false;
 			$(document).ready(function() {
@@ -426,27 +473,27 @@
 				my_markers.push({
 					lat : 31.975404605650933,
 					lon : -81.23600006103516,
-					size : 150,
+					size : 100,
 					info : "2 men mugged."
 				});
 				my_markers.push({
 					lat : 31.98050102903367,
 					lon : -81.22982025146484,
-					size : 200,
+					size : 100,
 					info : "Hit and run"
 				});
 
 				my_markers.push({
 					lat : 31.977151982694277,
 					lon : -81.2409782409668,
-					size : 250,
+					size : 100,
 					info : "Broken window"
 				});
 
 				my_markers.push({
 					lat : 31.975258989395627,
 					lon : -81.22552871704102,
-					size : 175,
+					size : 100,
 					info : "car stolen."
 				});
 				L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
