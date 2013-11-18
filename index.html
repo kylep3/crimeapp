@@ -454,12 +454,12 @@
 
 				}).addTo(map);
 
+				map.setView([31.9951, -81.2723], 13);
+
 				map.locate({
-					setView : true,
+					setView : false,
 					maxZoom : 16
 				});
-
-				map.setView([47.24623, -122.41756], 13);
 
 				for (var i = 0; i < my_markers.length; i++) {
 					addHeatMapCircle(my_markers[i].lat, my_markers[i].lon, my_markers[i].size, my_markers[i].info);
@@ -502,7 +502,8 @@
 				map.on('locationfound', onLocationFound);
 
 				function onLocationError(e) {
-					alert(e.message);
+
+					map.setView([31.9951, -81.2723], 13);
 				}
 
 
@@ -518,7 +519,7 @@
 					// var body = $("#landing").height();
 					// body -= (header + nav);
 					// $("#map-canvas").height(body);
-					$("#map-canvas").height($("#landing").height() - (125))
+					$("#map-canvas").height($("#landing").height() - (125));
 
 				}
 
