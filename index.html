@@ -97,7 +97,7 @@
 										<input type="text" data-clear-btn="true" name="text-1" id="text-1" value="" placeholder="(optional)">
 									</form>
 									<form>
-										<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+										<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="severity">
 											<legend>
 												Severity
 											</legend>
@@ -110,7 +110,7 @@
 										</fieldset>
 									</form>
 									<a href="#" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-iconpos="notext" data-inline="true">Cancel</a>
-									<a href="#" data-role="button" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Create</a>
+									<a href="#" data-role="button" id="btn-create" data-rel="back" data-transition="flow" data-theme="b" data-icon="check" data-iconpos="notext" data-inline="true">Create</a>
 								</div>
 							</div>
 						</li>
@@ -422,9 +422,10 @@
 				var my_markers = new Array();
 
 				// Putting incidents in the data array
+				// 31.9951, -81.2723
 				my_markers.push({
-					lat : 47.25762,
-					lon : -122.46451,
+					lat : 31.9951,
+					lon : -81.2723,
 					size : 250,
 					info : "2 men mugged."
 				});
@@ -464,6 +465,10 @@
 				for (var i = 0; i < my_markers.length; i++) {
 					addHeatMapCircle(my_markers[i].lat, my_markers[i].lon, my_markers[i].size, my_markers[i].info);
 				}
+				
+				$("#btn-create").click(function(){
+					
+				});
 				function addHeatMapCircle(lat, lon, size, info) {
 					var a_circle = L.circle([lat, lon], size, {
 						color : 'red',
