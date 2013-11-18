@@ -483,10 +483,10 @@
 					console.log('click');
 				});
 				function onMapClick(e) {
-					// var lat = e.latlng.lat;
-					// var lon = e.latlng.lng;
-					// console.log(lat + " " + lon);
-					// addHeatMapCircle(lat, lon, 500, "Random circle");
+					var lat = e.latlng.lat;
+					var lon = e.latlng.lng;
+					console.log(lat + " " + lon);
+					addHeatMapCircle(lat, lon, 100 "Random circle");
 
 					if (selectLocation) {
 						$("#lat").val(e.latlng.lat);
